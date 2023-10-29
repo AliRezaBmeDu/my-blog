@@ -22,3 +22,5 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+[Environment]::SetEnvironmentVariable("MY_BLOG_DATABASE_PASSWORD", "YourPassword", "User")
