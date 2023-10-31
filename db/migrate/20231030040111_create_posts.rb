@@ -1,7 +1,7 @@
 class CreatePosts < ActiveRecord::Migration[7.1]
   def change
     create_table :posts do |t|
-      t.references :author, foreign_key: { to_table: :users }
+      t.references :user, foreign_key: { to_table: :users, column: :author_id }
       t.string :title
       t.text :text
       t.integer :comments_counter
@@ -9,5 +9,7 @@ class CreatePosts < ActiveRecord::Migration[7.1]
 
       t.timestamps
     end
+
+    add_index :posts, :author_id
   end
 end
