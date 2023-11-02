@@ -24,5 +24,25 @@ RSpec.describe User, type: :model do
     user = User.new(posts_counter: -1)
     expect(user).to_not be_valid
   end
+
+  it 'returns the 3 most recent posts' do
+    user = User.create(
+      name: 'Tom Cruise',
+      posts_counter: 0,
+      photo: 'https://example.com/photo.jpg'
+    )
+
+    post1 = Post.create(author: user, title: 'Post 1', text: 'Text 1')
+    post2 = Post.create(author: user, title: 'Post 2', text: 'Text 2')
+    post3 = Post.create(author: user, title: 'Post 3', text: 'Text 3')
+    post4 = Post.create(author: user, title: 'Post 4', text: 'Text 4')
+
+    recent_posts = user.recent_posts
+
+    expect(recent_posts).to include(post4)
+    expect(recent_posts).to include(post3)
+    expect(recent_posts).to include(post2)
+    expect(recent_posts).to_not include(post1)
+  end
   
 end
