@@ -57,6 +57,7 @@
 ### Key Features <a name="key-features"></a>
 
 - **DRY method**
+- **CRUD operation**
 - **Like and Comment features**
 - **Add Storage feature**
 - **Unit Test**
@@ -92,8 +93,9 @@ https://github.com/AliRezaBmeDu/my-blog.git
 To run the project, execute the following steps:
 
 ```sh
-  ruby main.rb
+  rails console
 ```
+And insert commands for CRUD operations
 
 ### Test
 
