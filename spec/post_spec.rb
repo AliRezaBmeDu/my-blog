@@ -82,13 +82,13 @@ RSpec.describe Post, type: :model do
 
   describe '#recent_comments' do
     it 'returns the specified number of most recent comments' do
-        post = Post.create(author: user, title: 'Test Post', text: 'Mission Impossible five is the best')
-        comment1 = Comment.create(text: 'Comment 1', author: user, post: post)
-        comment2 = Comment.create(text: 'Comment 2', author: user, post: post)
-        comment3 = Comment.create(text: 'Comment 3', author: user, post: post)
+      post = Post.create(author: user, title: 'Test Post', text: 'Mission Impossible five is the best')
+      Comment.create(text: 'Comment 1', author: user, post:)
+      comment2 = Comment.create(text: 'Comment 2', author: user, post:)
+      comment3 = Comment.create(text: 'Comment 3', author: user, post:)
 
-        recent_comments = post.recent_comments(2)
-        expect(recent_comments).to eq([comment3, comment2])
+      recent_comments = post.recent_comments(2)
+      expect(recent_comments).to eq([comment3, comment2])
     end
   end
 end

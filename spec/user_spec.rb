@@ -44,5 +44,4 @@ RSpec.describe User, type: :model do
     expect(recent_posts).to include(post2)
     expect(recent_posts).to_not include(post1)
   end
-  
 end
