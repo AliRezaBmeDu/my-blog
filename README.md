@@ -32,13 +32,6 @@
 ### Tech Stack <a name="tech-stack"></a>
 
 <details>
-  <summary>Client</summary>
-  <ul>
-    <li>None</li>
-  </ul>
-</details>
-
-<details>
   <summary>Server</summary>
   <ul>
     <li>Ruby on Rails</li>
