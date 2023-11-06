@@ -15,8 +15,7 @@ class UsersController < ApplicationController
   def set_user
     @user = User.find(params[:id])
   rescue ActiveRecord::RecordNotFound
-    flash[:alert] = "User not found"
+    flash[:alert] = 'User not found'
     redirect_to users_path
   end
-
 end

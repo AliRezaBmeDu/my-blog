@@ -1,19 +1,19 @@
 class PostsController < ApplicationController
-    before_action :set_post, only: [:show]
+  before_action :set_post, only: [:show]
 
-    # GET /posts
-    def index
-      @posts = Post.all
-    end
-  
-    # GET /posts/:id
-    def show
-        puts params
-    end
+  # GET /posts
+  def index
+    @posts = Post.all
+  end
 
-    private
+  # GET /posts/:id
+  def show
+    puts params
+  end
 
-    def set_post
-        puts "Find the post by id"
-    end
+  private
+
+  def set_post
+    puts 'Find the post by id'
+  end
 end
