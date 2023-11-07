@@ -1,12 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe PostsController, type: :request do
-  let(:user) { User.create(
-      name: "Tom Cruise",
+  let(:user) do
+    User.create(
+      name: 'Tom Cruise',
       posts_counter: 0,
-      bio: "actor",
-      photo: "https://example.com/tom.jpg"
-    ) }
+      bio: 'actor',
+      photo: 'https://example.com/tom.jpg'
+    )
+  end
 
   describe 'GET #index' do
     before do
@@ -35,11 +37,12 @@ RSpec.describe PostsController, type: :request do
   end
 
   describe 'GET #show' do
-    let(:post) { 
+    let(:post) do
       user.posts.create(
-        title: 'Hello', 
+        title: 'Hello',
         text: 'This is my first post'
-      ) }
+      )
+    end
 
     it 'returns a successful response' do
       get user_post_path(user_id: user, format: post)

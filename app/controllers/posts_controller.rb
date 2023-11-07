@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-
   # GET /posts
   def index
     @user = User.find(params[:user_id])
@@ -12,5 +11,4 @@ class PostsController < ApplicationController
     @post_id = params[:format]
     @post = @user.posts.find(@post_id)
   end
-
 end
