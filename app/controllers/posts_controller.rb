@@ -3,17 +3,18 @@ class PostsController < ApplicationController
 
   # GET /posts
   def index
-    @posts = Post.all
+    @user = User.find(params[:user_id])
+    @posts = @user.posts
   end
 
   # GET /posts/:id
   def show
-    puts params
+    @user = User.find(params[:user_id])
   end
 
   private
 
   def set_post
-    puts 'Find the post by id'
+    @post = @user.posts.find(params[:id])
   end
 end
