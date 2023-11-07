@@ -27,10 +27,10 @@ RSpec.describe PostsController, type: :request do
     it 'includes correct placeholder text in the response body' do
       get user_posts_path(user)
       expect(response.body).to include("All the posts of #{user.name}")
-      expect(response.body).to include('First Post')   # Correct the case of "Post"
-      expect(response.body).to include('Content of post 1')  # Correct the content
-      expect(response.body).to include('Second Post')  # Correct the case of "Post"
-      expect(response.body).to include('Content of post 2')  # Correct the content
+      expect(response.body).to include('First Post')
+      expect(response.body).to include('Content of post 1')
+      expect(response.body).to include('Second Post')
+      expect(response.body).to include('Content of post 2')
     end
   end
 end
