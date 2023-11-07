@@ -1,1 +1,10 @@
 <h1>List of Users</h1>
+
+<ul>
+  <% @users.each do |user| %>
+    <li>
+        <%= user.name %>
+        <p><strong><%= user.bio || "N/A" %></strong></p>
+    </li>
+  <% end %>
+</ul>
