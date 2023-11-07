@@ -40,5 +40,11 @@ RSpec.describe UsersController, type: :request do
       expect(response.body).to include("Name: #{user.name}")
       expect(response.body).to include("Bio: #{user.bio}")
     end
+
+    it 'handles invalid user parameters' do
+      get user_path(12345) # Provide a non-existent user ID
+      expect(response).to redirect_to(users_path)
+      expect(flash[:alert]).to eq("User not found")
+    end
   end
 end
