@@ -6,7 +6,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    puts params
+    @name = @user.name
+    @bio = @user.bio
   end
 
   private
