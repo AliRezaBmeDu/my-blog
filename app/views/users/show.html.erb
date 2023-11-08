@@ -1,4 +1,33 @@
-<h1>Users#show</h1>
-<p>This is the detail of a single user</p>
-<p>Name: <%= @name %></p>
-<p>Bio: <%= @bio %></p>
+<% content_for :head do %>
+    <%= stylesheet_link_tag 'user_show' %>
+  <% end %>
+  
+<div class="user-profile">
+    <div class='photo-container'>
+        <img src="<%= @user.photo %>" alt="user-profile" class="user-photo" />
+    </div>
+    <div class="user-info">
+        <h2 class="user-name"><%= @user.name %></h2>
+        <p class="user-post-count">Number of posts: <%= @user.posts_counter %></p>
+    </div>
+</div>
+<div class="user-bio">
+    <h3>Bio</h3>
+    <p class="bio-text"><%= @user.bio %></p>
+</div>
+<div class="post-container">
+    <% @user.posts.each do |post| %>
+        <div class="single-post">
+            <div class="post-body">
+                <h3 class="post-title"><%= post.title %></h3>
+                <p class="post-text"><%= post.text %></p>
+            </div>
+            <div class="like-comment">
+                <p>
+                    <span>Comments: <%= post.comments_counter %></span>, 
+                    <span>Likes: <%= post.likes_counter || 0 %></span>
+                </p>
+            </div>
+        </div>
+    <% end %>
+</div>
