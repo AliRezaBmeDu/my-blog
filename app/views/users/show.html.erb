@@ -39,6 +39,8 @@
     <% end %>
 </div>
 
-<div class="button-container">
-    <button>See all posts</button>
-</div>
+<%= link_to user_posts_path(id: @user), style: "text-decoration: none;" do %>
+    <div class="button-container">
+        <button>See all posts</button>
+    </div>
+<% end %>
