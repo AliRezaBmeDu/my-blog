@@ -1,15 +1,114 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+body {
+  margin: auto;
+}
+
+.user-profile {
+  display: flex;
+  padding-inline: 5%;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.photo-container {
+  width: 25%;
+  box-sizing: border-box;
+  border: solid 2px black;
+  height: 6rem;
+  border-radius: 4px;
+  padding: 2px;
+}
+
+.user-card {
+  width: 75%;
+  box-sizing: border-box;
+  border: solid 2px black;
+  border-radius: 4px;
+  height: 6rem;
+}
+
+.user-info {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 2rem;
+  color: black;
+}
+
+.user-name {
+  align-self: center;
+}
+
+.user-post-count {
+  align-self: flex-end;
+}
+
+.user-bio {
+  box-sizing: border-box;
+  margin-inline: 5%;
+  margin-bottom: 2rem;
+  border: solid 2px black;
+  padding: 1%;
+  padding-inline: 2%;
+}
+
+.post-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-inline: 5%;
+}
+
+.single-post {
+  box-sizing: border-box;
+  border: solid 2px black;
+  padding: 1% 2%;
+  display: flex;
+  flex-direction: column;
+  color: black;
+}
+
+.post-title {
+  font-size: 2rem;
+}
+
+.like-comment {
+  align-self: flex-end;
+}
+
+.comments-container {
+  box-sizing: border-box;
+  border: solid 2px black;
+  border-radius: 4px;
+  padding: 1% 2%;
+  margin-top: -1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-envelope {
+  box-sizing: border-box;
+  border: solid 2px black;
+  border-radius: 4px;
+  margin-top: 2rem;
+  padding: 1% 2%;
+}
+
+.post-head {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-container {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  width: 20%;
+  height: 2rem;
+  padding: 0.5%;
+}

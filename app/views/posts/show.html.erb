@@ -1,4 +1,28 @@
-<h1>Posts#show</h1>
-<h2><%= @post.title %></h2>
-<p><%= @post.text %></p>
-<p>author: <%= @user.name %></p>
+<% content_for :head do %>
+    <%= stylesheet_link_tag 'post_show' %>
+<% end %>
+  
+<div class="post-container">
+    <div class="post-envelope">
+        <div class="post-head">
+            <div class="title-author">
+                <span class="post-title"><%= @post.title %></span> by 
+                <span class="post-author"><%= @post.author.name %></span>
+            </div>
+            <p>
+                <span>Comments: <%= @post.comments_counter %></span>, 
+                <span>Likes: <%= @post.likes_counter || 0 %></span>
+            </p>
+        </div>
+        
+        <p class="post-text"><%= @post.text %></p>
+    </div>
+    <div class="comments-container">
+        <% @post.comments.each do |comment| %>
+        <p>
+            <span><strong><%= comment.author.name %></strong></span>: 
+            <span><%= comment.text %></span>
+        </p>
+        <% end %>
+    </div>
+</div>
