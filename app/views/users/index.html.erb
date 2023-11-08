@@ -5,7 +5,7 @@
 <% @users.each do |user| %>
   <div class="user-profile">
     <div class='photo-container'>
-      <img src="<%= user.photo %>" alt="user-profile" class="user-photo" />
+      <img src="<%= user.photo %>" alt="user-img" class="user-photo" />
     </div>
     <div class="user-card">
       <%= link_to user_path(user), style: "text-decoration: none;" do %>

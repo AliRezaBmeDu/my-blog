@@ -1,22 +1,28 @@
 <% content_for :head do %>
     <%= stylesheet_link_tag 'user_show' %>
 <% end %>
-  
+
+
 <div class="user-profile">
     <div class='photo-container'>
-        <img src="<%= @user.photo %>" alt="user-profile" class="user-photo" />
+        <img src="<%= @user.photo %>" alt="user-img" class="user-photo" />
     </div>
-    <div class="user-info">
-        <h2 class="user-name"><%= @user.name %></h2>
-        <p class="user-post-count">Number of posts: <%= @user.posts_counter %></p>
+    <div class="user-card">
+        <div class="user-info">
+            <h2 class="user-name"><%= @user.name %></h2>
+            <p class="user-post-count">Number of posts: <%= @user.posts_counter %></p>
+        </div>
     </div>
 </div>
+
 <div class="user-bio">
     <h3>Bio</h3>
     <p class="bio-text"><%= @user.bio %></p>
 </div>
+
 <div class="post-container">
     <% @user.posts.each do |post| %>
+    <%= link_to user_post_path(user_id: @user, id: post.id), style: "text-decoration: none;" do %>
         <div class="single-post">
             <div class="post-body">
                 <h3 class="post-title"><%= post.title %></h3>
@@ -29,6 +35,7 @@
                 </p>
             </div>
         </div>
+    <% end %>
     <% end %>
 </div>
 

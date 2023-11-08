@@ -7,9 +7,11 @@
     <div class='photo-container'>
         <img src="<%= @user.photo %>" alt="user-profile" class="user-photo" />
     </div>
-    <div class="user-info">
-        <h2 class="user-name"><%= @user.name %></h2>
-        <p class="user-post-count">Number of posts: <%= @user.posts_counter %></p>
+    <div class="user-card">
+        <div class="user-info">
+            <h2 class="user-name"><%= @user.name %></h2>
+            <p class="user-post-count">Number of posts: <%= @user.posts_counter %></p>
+        </div>
     </div>
 </div>
 <div class="post-container">

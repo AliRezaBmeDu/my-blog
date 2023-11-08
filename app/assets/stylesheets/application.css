@@ -1,3 +1,6 @@
+body {
+  margin: auto;
+}
 
 .user-profile {
   display: flex;
@@ -5,6 +8,7 @@
   align-items: center;
   margin-bottom: 1rem;
   gap: 2rem;
+  margin-top: 2rem;
 }
 
 .photo-container {
@@ -37,4 +41,61 @@
 
 .user-post-count {
   align-self: flex-end;
+}
+
+.user-bio {
+  box-sizing: border-box;
+  margin-inline: 5%;
+  margin-bottom: 2rem;
+  border: solid 2px black;
+  padding: 1%;
+  padding-inline: 2%;
+}
+
+.post-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.single-post {
+  box-sizing: border-box;
+  border: solid 2px black;
+  padding: 1% 2%;
+  margin-inline: 5%;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-title {
+  font-size: 2rem;
+}
+
+.like-comment {
+  align-self: flex-end;
+}
+
+.comments-container {
+  box-sizing: border-box;
+  border: solid 2px black;
+  border-radius: 4px;
+  padding: 1% 2%;
+  margin-inline: 5%;
+  margin-top: -1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-envelope {
+  box-sizing: border-box;
+  border: solid 2px black;
+  border-radius: 4px;
+  margin-inline: 5%;
+  margin-top: 2rem;
+  padding: 1% 2%;
+}
+
+.post-head {
+  display: flex;
+  justify-content: space-between;
 }
