@@ -1,10 +1,38 @@
-<ul>
-  <% @posts.each do |post| %>
-    <li>
-        <%= post.title %>
-        <p><%= post.text %></p>
-        <p>Post ID: <%= post.id %></p>
-    </li>
-  <% end %>
-</ul>
-
+<% content_for :head do %>
+    <%= stylesheet_link_tag 'user_show' %>
+    <%= stylesheet_link_tag 'post_index' %>
+<% end %>
+  
+<div class="user-profile">
+    <div class='photo-container'>
+        <img src="<%= @user.photo %>" alt="user-profile" class="user-photo" />
+    </div>
+    <div class="user-info">
+        <h2 class="user-name"><%= @user.name %></h2>
+        <p class="user-post-count">Number of posts: <%= @user.posts_counter %></p>
+    </div>
+</div>
+<div class="post-container">
+    <% @posts.each do |post| %>
+        <div class="single-post">
+            <div class="post-body">
+                <h3 class="post-title"><%= post.title %></h3>
+                <p class="post-text"><%= post.text %></p>
+            </div>
+            <div class="like-comment">
+                <p>
+                    <span>Comments: <%= post.comments_counter %></span>, 
+                    <span>Likes: <%= post.likes_counter || 0 %></span>
+                </p>
+            </div>
+        </div>
+        <div class="comments-container">
+          <% post.comments.each do |comment| %>
+            <p>
+             <span><strong><%= comment.author.name %></strong></span>: 
+             <span><%= comment.text %></span>
+            </p>
+          <% end %>
+        </div>
+    <% end %>
+</div>
