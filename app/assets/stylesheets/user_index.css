@@ -9,7 +9,7 @@
 .photo-container {
     width: 25%;
     box-sizing: border-box;
-    border: solid 1px black;
+    border: solid 2px black;
     height: 6rem;
     border-radius: 4px;
     padding: 2px;
@@ -18,7 +18,7 @@
 .user-info {
     display: flex;
     box-sizing: border-box;
-    border: solid 1px black;
+    border: solid 2px black;
     border-radius: 4px;
     width: 65%;
     height: 6rem;

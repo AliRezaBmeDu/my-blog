@@ -1,10 +1,13 @@
-.comments-container {
+.post-envelope {
     box-sizing: border-box;
     border: solid 2px black;
     border-radius: 4px;
-    padding: 1% 2%;
     margin-inline: 5%;
-    margin-top: -1.5rem;
+    margin-top: 2rem;
+    padding: 1% 2%;
+}
+
+.post-head {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
 }

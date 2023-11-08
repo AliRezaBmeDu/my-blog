@@ -28,7 +28,7 @@ body {
 .photo-container {
     width: 25%;
     box-sizing: border-box;
-    border: solid 1px black;
+    border: solid 2px black;
     height: 6rem;
     border-radius: 4px;
     padding: 2px;
@@ -37,7 +37,7 @@ body {
 .user-info {
     display: flex;
     box-sizing: border-box;
-    border: solid 1px black;
+    border: solid 2px black;
     border-radius: 4px;
     width: 75%;
     height: 6rem;
@@ -51,4 +51,18 @@ body {
 
 .user-post-count {
     align-self: flex-end;
+}
+
+.button-container {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    width: 20%;
+    height: 2rem;
+    padding: 0.5%;
 }
