@@ -1,19 +1,14 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show]
-
   # GET /posts
   def index
-    @posts = Post.all
+    @user = User.find(params[:user_id])
+    @posts = @user.posts
   end
 
   # GET /posts/:id
   def show
-    puts params
-  end
-
-  private
-
-  def set_post
-    puts 'Find the post by id'
+    @user = User.find(params[:user_id])
+    @post_id = params[:format]
+    @post = @user.posts.find(@post_id)
   end
 end

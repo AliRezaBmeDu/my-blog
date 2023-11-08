@@ -1,2 +1,12 @@
 <h1>Posts#index</h1>
-<p>All Posts</p>
+<p>All the posts of <%= @user.name %></p>
+<ul>
+  <% @posts.each do |post| %>
+    <li>
+        <%= post.title %>
+        <p><%= post.text %></p>
+        <p>Post ID: <%= post.id %></p>
+    </li>
+  <% end %>
+</ul>
+
