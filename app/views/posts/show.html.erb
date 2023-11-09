@@ -25,4 +25,15 @@
         </p>
         <% end %>
     </div>
+    <div class="button-container">
+        <button
+            onclick="window.location.href='<%= new_user_post_comment_path(post_id: @post) %>'"
+        >
+            Comment
+        </button>
+        <div class='like-button'>
+            <%= button_to 'Like', likes_path(post_id: @post.id), method: :post %>
+        </div>
+    </div>
+    
 </div>

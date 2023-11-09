@@ -1,0 +1,18 @@
+<h1>New Comment</h1>
+<h2>Author: <%= @user.name %></h2>
+
+<%= form_with(model: [@user, @post, @comment]) do |form| %>
+
+  <div class="field">
+    <%= form.label :text %>
+    <%= form.text_area :text %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Comment" %>
+  </div>
+
+  <div>
+    <%= params %>
+  </div>
+<% end %>
