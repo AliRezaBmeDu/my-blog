@@ -10,6 +10,9 @@ class UsersController < ApplicationController
     @bio = @user.bio
   end
 
+  def new
+  end
+
   private
 
   # Find and set the user for the 'show' action
