@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action 
+  before_action :get_user_post, only: [:show]
   # GET /posts
   def index
     @user = User.find(params[:id])
@@ -9,9 +9,6 @@ class PostsController < ApplicationController
 
   # GET /posts/:id
   def show
-    @user = User.find(params[:user_id])
-    @post_id = params[:id]
-    @post = @user.posts.find(@post_id)
   end
 
   def new
@@ -19,10 +16,16 @@ class PostsController < ApplicationController
     @post = @user.posts.new
   end
 
-  private
-  def get_user
+  def create
+      
   end
 
-  def get_post
+  private
+
+  def get_user_post
+    @user = User.find(params[:user_id])
+    @post_id = params[:id]
+    @post = @user.posts.find(@post_id)
   end
+
 end
