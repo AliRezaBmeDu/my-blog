@@ -17,6 +17,7 @@ class PostsController < ApplicationController
   end
 
   def create
+    @user = current_user
     @post = @user.posts.new(post_params)
 
     if @post.save
@@ -32,6 +33,10 @@ class PostsController < ApplicationController
     @user = User.find(params[:user_id])
     @post_id = params[:id]
     @post = @user.posts.find(@post_id)
+  end
+
+  def post_params
+    params.require(:post).permit(:title, :text)
   end
 
 end
