@@ -31,5 +31,10 @@
         >
             Comment
         </button>
+        <button
+            onclick= "window.location.href='<%= user_post_like_path(user_id: @post.author, id: @post) %>'"
+        >
+            Like
+        </button>
     </div>
 </div>
