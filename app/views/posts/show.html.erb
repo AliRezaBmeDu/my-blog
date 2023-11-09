@@ -31,10 +31,9 @@
         >
             Comment
         </button>
-        <button
-            onclick= "window.location.href='<%= user_post_like_path(user_id: @post.author, id: @post) %>'"
-        >
-            Like
-        </button>
+        <div class='like-button'>
+            <%= button_to 'Like', likes_path(post_id: @post.id), method: :post %>
+        </div>
     </div>
+    
 </div>
