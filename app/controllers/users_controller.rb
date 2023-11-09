@@ -10,8 +10,7 @@ class UsersController < ApplicationController
     @bio = @user.bio
   end
 
-  def new
-  end
+  def new; end
 
   private
 

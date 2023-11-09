@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :get_user_post, only: [:show]
+  before_action :find_user_post, only: [:show]
   # GET /posts
   def index
     @user = User.find(params[:id])
@@ -8,8 +8,7 @@ class PostsController < ApplicationController
   end
 
   # GET /posts/:id
-  def show
-  end
+  def show; end
 
   def new
     @user = current_user
@@ -30,7 +29,7 @@ class PostsController < ApplicationController
 
   private
 
-  def get_user_post
+  def find_user_post
     @user = User.find(params[:user_id])
     @post_id = params[:id]
     @post = @user.posts.find(@post_id)
@@ -39,5 +38,4 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:title, :text)
   end
-
 end
