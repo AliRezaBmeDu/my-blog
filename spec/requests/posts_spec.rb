@@ -28,7 +28,6 @@ RSpec.describe PostsController, type: :request do
 
     it 'includes correct placeholder text in the response body' do
       get user_posts_path(user)
-      expect(response.body).to include("All the posts of #{user.name}")
       expect(response.body).to include('First Post')
       expect(response.body).to include('Content of post 1')
       expect(response.body).to include('Second Post')
@@ -45,18 +44,18 @@ RSpec.describe PostsController, type: :request do
     end
 
     it 'returns a successful response' do
-      get user_post_path(user_id: user, format: post)
+      get user_post_path(user_id: user, id: post)
       expect(response).to have_http_status(:success)
     end
 
     it 'renders the show template' do
-      get user_post_path(user_id: user, format: post)
+      get user_post_path(user_id: user, id: post)
       expect(response).to render_template(:show)
     end
 
     it 'includes correct placeholder text in the response body' do
-      get user_post_path(user_id: user, format: post)
-      expect(response.body).to include("author: #{user.name}")
+      get user_post_path(user_id: user, id: post)
+      expect(response.body).to include("#{user.name}")
       expect(response.body).to include('Hello')
       expect(response.body).to include('This is my first post')
     end

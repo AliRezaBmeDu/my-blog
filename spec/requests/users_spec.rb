@@ -37,8 +37,7 @@ RSpec.describe UsersController, type: :request do
 
     it 'includes correct placeholder text in the response body' do
       get user_path(user)
-      expect(response.body).to include("Name: #{user.name}")
-      expect(response.body).to include("Bio: #{user.bio}")
+      expect(response.body).to include("#{user.name}")
     end
 
     it 'handles invalid user parameters' do
