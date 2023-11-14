@@ -12,4 +12,30 @@ describe 'Post show', type: :feature do
     @third_like = Like.create(post: @post, user: @first_user)
     visit user_posts_path(@first_user, @post)
   end
+
+  it 'I can see the post\'s title' do
+    expect(page).to have_content(@post.title)
+  end
+  it 'I can see who wrote the post' do
+    expect(page).to have_content(@first_user.name)
+  end
+  it 'I can see how many comments it has' do
+    expect(page).to have_content(@post.comments_counter)
+  end
+  it 'I can see how many likes it has' do
+    expect(page).to have_content(@post.likes_counter)
+  end
+  it 'I can see the post body' do
+    expect(page).to have_content(@post.text)
+  end
+  it 'I can see the username of each commentor' do
+    expect(page).to have_content(@first_comment.author.name)
+    expect(page).to have_content(@second_comment.author.name)
+    expect(page).to have_content(@third_comment.author.name)
+  end
+  it 'I can see the comment each commentor left' do
+    expect(page).to have_content(@first_comment.text)
+    expect(page).to have_content(@second_comment.text)
+    expect(page).to have_content(@third_comment.text)
+  end
 end
