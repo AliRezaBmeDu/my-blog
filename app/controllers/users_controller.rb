@@ -16,7 +16,7 @@ class UsersController < ApplicationController
 
   # Find and set the user for the 'show' action
   def set_user
-    @user = User.find(params[:id])
+    @user = User.includes(posts: :comments).find(params[:id])
   rescue ActiveRecord::RecordNotFound
     flash[:alert] = 'User not found'
     redirect_to users_path
