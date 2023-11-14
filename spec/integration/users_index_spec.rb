@@ -7,7 +7,7 @@ describe 'testing users/index', type: :feature do
   before(:each) do
     # Load users from the YAML file
     users_data = YAML.load_file(Rails.root.join('spec', 'fixtures', 'users.yml'))
-    
+
     # Create users from the loaded data
     users_data.each do |_user_key, user_data|
       User.create(user_data)

@@ -3,14 +3,14 @@ require 'capybara/rspec'
 require 'capybara/rails'
 
 RSpec.describe 'users show page', type: :feature do
-    let(:sample_user_data) do
-        {
-            name: 'Tom Cruise',
-            posts_counter: 0,
-            bio: 'actor',
-            photo: 'https://example.com/tom.jpg'
-        }
-    end
+  let(:sample_user_data) do
+    {
+      name: 'Tom Cruise',
+      posts_counter: 0,
+      bio: 'actor',
+      photo: 'https://example.com/tom.jpg'
+    }
+  end
   before :each do
     @user = User.create(sample_user_data)
   end
@@ -43,12 +43,12 @@ RSpec.describe 'users show page', type: :feature do
         text: 'Chimera' },
       { title: 'MI3',
         text: 'Forget' },
-    { title: 'MI4',
+      { title: 'MI4',
         text: 'Ghost Protocol' },
       { title: 'MI5',
         text: 'Rougue Nation' },
       { title: 'MI6',
-        text: 'Fallout' },
+        text: 'Fallout' }
     ]
 
     posts.each do |item|

@@ -60,7 +60,7 @@ RSpec.describe 'Post', type: :feature do
 
   it 'should redirects to that post\'s show page upon clicking the post content' do
     visit user_posts_path(id: @user.id)
-    click_on "#{@post.text}"
+    click_on @post.text.to_s
     expect(page).to have_current_path(user_post_path(user_id: @user.id, id: @post.id))
   end
 end
