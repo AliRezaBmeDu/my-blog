@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :find_user_post, only: [:show]
   # GET /posts
   def index
-    @user = User.find(params[:id])
+    @user = User.includes(posts: :comments).find(params[:id])
     @posts = @user.posts
     @param = params
   end
@@ -30,7 +30,7 @@ class PostsController < ApplicationController
   private
 
   def find_user_post
-    @user = User.find(params[:user_id])
+    @user = User.includes(posts: :comments).find(params[:user_id])
     @post_id = params[:id]
     @post = @user.posts.find(@post_id)
   end
