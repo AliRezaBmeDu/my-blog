@@ -2,7 +2,9 @@
     <%= stylesheet_link_tag 'user_show' %>
     <%= stylesheet_link_tag 'post_index' %>
 <% end %>
-  
+
+<%= render 'navbar' %>
+
 <div class="user-profile">
     <div class='photo-container'>
         <img src="<%= @user.photo %>" alt="user-profile" class="user-photo" />
