@@ -6,6 +6,12 @@ Rails.application.routes.draw do
   get '/users/:user_id/posts/new', to: 'posts#new', as: :new_user_post
   get '/users/:user_id/posts/:id', to: 'posts#show', as: :user_post
   
+  root to: 'devise/sessions#new'
+
+  # For authenticated users, redirect to the homepage
+  authenticated :user do
+    root to: 'home#index', as: :authenticated_root
+  end
 
   resources :users do
     resources :posts do
