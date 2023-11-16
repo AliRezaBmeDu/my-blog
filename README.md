@@ -54,6 +54,8 @@
 - **Like and Comment features**
 - **Add Storage feature**
 - **Unit Test**
+- *Authentication with Devise*
+- *Authorization with cancancan gem*
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
