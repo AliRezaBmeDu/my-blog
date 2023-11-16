@@ -26,5 +26,4 @@ Rails.application.routes.draw do
     root to: "devise/sessions#new", as: :sign_in_root
   end
 
-  # root 'users#index'
 end
