@@ -9,7 +9,7 @@ class User < ApplicationRecord
 
   validates :name, presence: true, length: { maximum: 255 }
   validates :posts_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
-  
+
   attribute :posts_counter, :integer, default: 0
 
   def recent_posts
@@ -23,5 +23,4 @@ class User < ApplicationRecord
   def confirmed?
     confirmed_at.present?
   end
-  
 end
