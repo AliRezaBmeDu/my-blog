@@ -7,10 +7,14 @@ class Ability
     # Define abilities for the user here. For example:
     #
     user ||= User.new # guest user (not logged in)
-    can :destroy, Post, author_id: user.id
-    can :destroy, Comment, author_id: user.id
-    can :destroy, Post if user.admin?
-    can :destroy, Comment if user.admin?
+    
+    if user.role == 'admin'
+      can :manage, :all
+    else
+      can :manage, Post, author_id: user.id
+      can :manage, Comment, author_id: user.id
+      can :read, :all
+    end
     #   return unless user.present?
     #   can :read, :all
     #   return unless user.admin?
