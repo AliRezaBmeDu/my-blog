@@ -25,6 +25,9 @@
             <span><strong><%= comment.author.name %></strong></span>: 
             <span><%= comment.text %></span>
         </p>
+        <% if can? :destroy, @comment %>
+            <%= button_to "Delete Comment", comment, method: :delete, data: { confirm: "Are you sure?" } %>
+        <% end %>
         <% end %>
     </div>
     <div class="button-container">
@@ -36,6 +39,9 @@
         <div class='like-button'>
             <%= button_to 'Like', likes_path(post_id: @post.id), method: :post %>
         </div>
+        <% if can? :destroy, @post %>
+            <%= button_to "Delete", user_post_path(@user, @post), method: :delete, data: { confirm: "Are you sure?" } %>
+        <% end %>
     </div>
     
 </div>

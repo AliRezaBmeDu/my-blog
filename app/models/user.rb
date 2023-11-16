@@ -3,6 +3,10 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :confirmable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  # Add the role attribute
+  enum role: [:user, :admin]
+  
   has_many :posts, foreign_key: :author_id
   has_many :likes
   has_many :comments, foreign_key: :author_id
