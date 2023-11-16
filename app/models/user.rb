@@ -27,4 +27,8 @@ class User < ApplicationRecord
   def confirmed?
     confirmed_at.present?
   end
+
+  def admin?
+    role == 'admin'
+  end
 end

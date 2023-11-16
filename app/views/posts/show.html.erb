@@ -39,8 +39,10 @@
         <div class='like-button'>
             <%= button_to 'Like', likes_path(post_id: @post.id), method: :post %>
         </div>
-        <% if can? :destroy, @post %>
-            <%= button_to "Delete", user_post_path(@user, @post), method: :delete, data: { confirm: "Are you sure?" } %>
+         <% if can? :destroy, @post %>
+            <%= button_to 'Delete', user_post_path(user_id: @post.author_id, id: @post.id),
+                            method: :delete, data: { confirm: 'Are you sure you want to delete this post?' },
+                            class: 'border' %>
         <% end %>
     </div>
     
