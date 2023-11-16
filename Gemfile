@@ -13,6 +13,8 @@ gem 'devise'
 
 gem 'cancancan'
 
+gem 'active_model_serializers', '~> 0.10.14'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.1.1'
 
