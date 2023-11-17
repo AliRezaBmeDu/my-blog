@@ -1,16 +1,18 @@
-# app/controllers/api/api_comments_controller.rb
 module Api
     class ApiCommentsController < ApplicationController
-      before_action :authenticate_user!
+      skip_before_action :verify_authenticity_token
+      # before_action :authenticate_user!
 
       def index
-        @post = current_user.posts.find(params[:post_id])
+        @user = User.find(params[:user_id])
+        @post = @user.posts.find(params[:post_id])
         @comments = @post.comments
         render json: @comments
       end
       
       def create
-        @post = current_user.posts.find(params[:post_id])
+        @user = User.find(params[:user_id])
+        @post = @user.posts.find(params[:post_id])
         @comment = @post.comments.new(comment_params.merge(author: current_user))
         
         if @comment.save
