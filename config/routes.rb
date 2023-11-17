@@ -26,4 +26,12 @@ Rails.application.routes.draw do
     root to: "devise/sessions#new", as: :sign_in_root
   end
 
+  post 'api/users/:user_id/posts/:post_id/comments/new', to: 'api/api_comments#create', as: :add_new_comment_api
+  namespace :api do
+    resources :users, only: [:index], controller: 'api_users' do
+      resources :posts, only: [:index], controller: 'api_posts' do
+        resources :comments, only: [:index, :create], controller: 'api_comments'
+      end
+    end
+  end
 end
