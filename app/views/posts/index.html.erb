@@ -2,7 +2,9 @@
     <%= stylesheet_link_tag 'user_show' %>
     <%= stylesheet_link_tag 'post_index' %>
 <% end %>
-  
+
+<%= render 'helpers/navbar' %>
+
 <div class="user-profile">
     <div class='photo-container'>
         <img src="<%= @user.photo %>" alt="user-profile" class="user-photo" />
@@ -45,7 +47,7 @@
       <button 
         onclick="window.location.href='<%= new_user_post_path(@user) %>'"
         >
-            pagination
+            Create Post
         </button>
     </div>
 </div>

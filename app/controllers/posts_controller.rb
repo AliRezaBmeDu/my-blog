@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
   before_action :find_user_post, only: [:show]
   # GET /posts
   def index
@@ -21,10 +22,20 @@ class PostsController < ApplicationController
     @par = post_params
 
     if @post.save
-      redirect_to user_post_path(user_id: @user, id: @post), notice: 'Post was successfully created.'
+      redirect_to user_post_path(user_id: @user.id, id: @post.id), notice: 'Post was successfully created.'
     else
       render :new
     end
+  end
+
+  def destroy
+    @post = Post.includes(:likes).find(params[:id])
+    @author = @post.author
+    @author.decrement!(:posts_counter)
+    @post.likes.destroy_all
+    @post.destroy!
+
+    redirect_to user_posts_path(id: @author.id), notice: 'Post successfully deleted'
   end
 
   private

@@ -3,15 +3,21 @@ user1:
   posts_counter: 0
   bio: actor
   photo: https://example.com/tom.jpg
+  email: tom@hollywood.com
+  password: abcdef
 
 user2:
   name: Mel Gibson
   posts_counter: 3
   bio: actor
   photo: https://example.com/gibson.jpg
+  email: g@h.com
+  password: abcdef
 
 user3:
   name: Russel Crowe
   posts_counter: 2
   bio: actor
   photo: https://example.com/russel.jpg
+  email: a@b.com
+  password: abcdef

@@ -54,6 +54,8 @@
 - **Like and Comment features**
 - **Add Storage feature**
 - **Unit Test**
+- *Authentication with Devise*
+- *Authorization with cancancan gem*
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -109,6 +111,11 @@ To run the unit test files, run the following command in the terminal:
 - GitHub: [@githubhandle](https://github.com/AliRezaBmeDu)
 - Twitter: [@twitterhandle](https://twitter.com/share_insider)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/mohammad-ali-reza-25686428b/)
+
+👤 **Agustin Soria**
+
+- GitHub: [@saveryIV](https://github.com/saveryIV)
+- LinkedIn: [@AgustinSoria](https://www.linkedin.com/in/agust%C3%ADn-ricardo-soria-meza-979747228/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
