@@ -5,4 +5,3 @@ class Api::ApiUsersController < ApplicationController
     render json: @posts
   end
 end
-  
