@@ -24,7 +24,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 My-Blog <img height='50' src='https://cdn.pixabay.com/photo/2015/11/06/13/25/blog-1027861_640.jpg' /> <a name="about-project"></a>
+# 📖 My-Blog <img height='80' src='https://cdn.pixabay.com/photo/2015/11/06/13/25/blog-1027861_640.jpg' /> <a name="about-project"></a>
 
 **My-Blog** is a Ruby-On-Rails application which is a classic example of a blog application where users can interact with each other by liking posts, commenting etc. The data storage is taken care of by Postgresql database.
 
