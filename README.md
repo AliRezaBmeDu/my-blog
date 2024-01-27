@@ -1,4 +1,4 @@
-<img src='https://cdn.pixabay.com/photo/2015/11/06/13/25/blog-1027861_640.jpg' />
+<img height='50' src='https://cdn.pixabay.com/photo/2015/11/06/13/25/blog-1027861_640.jpg' />
 <a name="readme-top"></a>
 
 <!-- TABLE OF CONTENTS -->
